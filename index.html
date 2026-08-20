@@ -6,10 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Speech-to-Text Ekosistem</title>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+<title>
+AI Speech-to-Text Ekosistem
+</title>
 
 
 <style>
@@ -37,7 +36,7 @@ body{
 
     color:white;
 
-    padding:40px;
+    padding:35px;
 
 }
 
@@ -49,44 +48,28 @@ body{
 }
 
 
+.header p{
+
+    font-size:22px;
+
+}
 
 
-/* CONTAINER */
+
+
+/* KOTAK VIDEO */
 
 .container{
 
-    width:85%;
+    width:90%;
+
+    max-width:1300px;
 
     margin:40px auto;
 
     background:white;
 
-    padding:45px;
-
-    border-radius:25px;
-
-}
-
-
-
-
-
-/* VIDEO */
-
-.video-container{
-
-    position:relative;
-
-    width:85%;
-
-    margin:auto;
-
-}
-
-
-video{
-
-    width:100%;
+    padding:40px;
 
     border-radius:20px;
 
@@ -95,22 +78,69 @@ video{
 
 
 
-/* TOMBOL TRANSKRIP */
 
-.btn-transkrip{
+.judul{
+
+    font-size:35px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+/* VIDEO FULL */
+
+.video-container{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+.video-container video{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    border-radius:15px;
+
+}
+
+
+
+
+
+/* TOMBOL ABK DALAM VIDEO */
+
+.btnABK{
 
 
     position:absolute;
 
+
     right:25px;
+
 
     bottom:25px;
 
 
-    padding:20px 35px;
+    padding:12px 22px;
 
 
-    background:#0077cc;
+    background:#0078d4;
 
 
     color:white;
@@ -119,22 +149,30 @@ video{
     border:none;
 
 
-    border-radius:15px;
+    border-radius:10px;
 
 
-    font-size:25px;
+    font-size:18px;
 
 
     cursor:pointer;
+
+
+    z-index:10;
+
+
+    opacity:0.9;
 
 
 }
 
 
 
-.btn-transkrip:hover{
+.btnABK:hover{
 
-    background:#005999;
+
+    opacity:1;
+
 
 }
 
@@ -150,69 +188,39 @@ video{
     display:none;
 
 
-    margin-top:40px;
-
-
-    padding:50px;
-
-
-    background:#f7fbff;
-
-
-    border-radius:25px;
-
-
     text-align:left;
 
 
-
-    font-family:'Bree Serif', serif;
-
-
-
-    font-size:60px;
-
-
-
-    line-height:1.7;
+    padding:35px;
 
 
 }
 
 
 
-
-/* PARAGRAF TRANSKRIP */
-
-#transkrip p{
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-
-/* JUDUL */
-
-.judul{
+#transkrip h2{
 
 
     text-align:center;
 
 
-    font-family:'Bree Serif', serif;
+    font-size:35px;
 
 
-    font-size:65px;
+}
 
 
-    font-weight:bold;
+
+#transkrip p{
 
 
-    margin-bottom:40px;
+    font-size:28px;
+
+
+    line-height:1.5;
+
+
+    margin-bottom:15px;
 
 
 }
@@ -220,22 +228,19 @@ video{
 
 
 
-
-/* BUTTON KEMBALI */
-
-.btn-kembali{
+.btnKembali{
 
 
     display:block;
 
 
-    margin:35px auto 0;
+    margin:30px auto;
 
 
-    padding:20px 40px;
+    padding:12px 25px;
 
 
-    background:#0077cc;
+    background:#0078d4;
 
 
     color:white;
@@ -244,22 +249,14 @@ video{
     border:none;
 
 
-    border-radius:15px;
+    border-radius:10px;
 
 
-    font-size:25px;
+    font-size:18px;
 
 
     cursor:pointer;
 
-
-}
-
-
-
-.btn-kembali:hover{
-
-    background:#005999;
 
 }
 
@@ -273,6 +270,7 @@ video{
 
 
 <body>
+
 
 
 
@@ -299,10 +297,11 @@ Media Pembelajaran Ramah ABK
 <div class="container">
 
 
+<div class="judul">
 
-<h2>
 🎬 Video Ekosistem
-</h2>
+
+</div>
 
 
 
@@ -311,14 +310,14 @@ Media Pembelajaran Ramah ABK
 <div class="video-container">
 
 
-<video id="videoBox" controls>
+
+<video controls>
 
 
 <source src="video-ekosistem.mp4" type="video/mp4">
 
 
-Browser tidak mendukung video.
-
+Video tidak dapat diputar.
 
 
 </video>
@@ -326,10 +325,11 @@ Browser tidak mendukung video.
 
 
 
-<button class="btn-transkrip" onclick="tampilkanTranskrip()">
+
+<button class="btnABK" onclick="tampilkanTranskrip()">
 
 
-🧏 Tampilkan Transkrip
+♿ ABK - Tampilkan Transkrip
 
 
 </button>
@@ -347,11 +347,13 @@ Browser tidak mendukung video.
 <div id="transkrip">
 
 
-<div class="judul">
 
-📝 Transkrip Video Ekosistem
+<h2>
 
-</div>
+📄 Transkrip Video Ekosistem
+
+</h2>
+
 
 
 
@@ -360,9 +362,11 @@ Lingkungan persawahan menjadi salah satu favorit bermain anak, apalagi pada saat
 </p>
 
 
+
 <p>
 Pernahkah kalian perhatikan makhluk hidup apa saja yang mungkin hidup di area persawahan.
 </p>
+
 
 
 <p>
@@ -370,9 +374,11 @@ Apakah makhluk hidup yang ada di lingkungan tersebut saling berhubungan satu den
 </p>
 
 
+
 <p>
 Pernahkah sahabat memperhatikan bagaimana makhluk hidup itu saling berinteraksi dengan lingkungannya?
 </p>
+
 
 
 <p>
@@ -383,7 +389,7 @@ Lalu, komponen-komponen apa sajakah yang ada di dalamnya?
 
 
 
-<button class="btn-kembali" onclick="kembaliVideo()">
+<button class="btnKembali" onclick="kembaliVideo()">
 
 
 🎬 Kembali ke Video
@@ -398,7 +404,9 @@ Lalu, komponen-komponen apa sajakah yang ada di dalamnya?
 
 
 
+
 </div>
+
 
 
 
@@ -412,7 +420,7 @@ Lalu, komponen-komponen apa sajakah yang ada di dalamnya?
 function tampilkanTranskrip(){
 
 
-document.getElementById("videoBox").style.display="none";
+document.querySelector(".video-container").style.display="none";
 
 
 document.getElementById("transkrip").style.display="block";
@@ -423,10 +431,11 @@ document.getElementById("transkrip").style.display="block";
 
 
 
+
 function kembaliVideo(){
 
 
-document.getElementById("videoBox").style.display="block";
+document.querySelector(".video-container").style.display="block";
 
 
 document.getElementById("transkrip").style.display="none";
@@ -437,6 +446,7 @@ document.getElementById("transkrip").style.display="none";
 
 
 </script>
+
 
 
 
